@@ -18,8 +18,10 @@ const FilmCard = ({ film }: FilmsCardProps): React.ReactElement => {
         width="300"
         height="406"
       />
-      Dirección: {film.director}
-      Year: {film.year}
+      <ul>
+        <li>Dirección: {film.director}</li>
+        <li>Year: {film.year}</li>
+      </ul>
       <Button className="film__button">
         <X aria-label="eliminar película" />
       </Button>
