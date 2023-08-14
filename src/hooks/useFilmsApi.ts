@@ -11,7 +11,7 @@ const useFilmsApi = () => {
 
       return apiFilms;
     } catch (error) {
-      throw new Error("Cant show any film");
+      throw new Error("Can't show any film");
     }
   }, [apiUrl]);
 
