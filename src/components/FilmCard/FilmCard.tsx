@@ -14,7 +14,7 @@ const FilmCard = ({ film }: FilmsCardProps): React.ReactElement => {
       <img
         className="film__poster"
         src={film.poster}
-        alt=""
+        alt={film.title}
         width="300"
         height="406"
       />
