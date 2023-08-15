@@ -1,4 +1,6 @@
-export const mockFilms = [
+import { Film, NewFilm } from "../types";
+
+export const mockFilms: Film[] = [
   {
     id: 1,
     title: "Viaje a Darjeeling",
@@ -15,3 +17,11 @@ export const mockFilms = [
     year: 2016,
   },
 ];
+
+export const newMockFilms: NewFilm = {
+  title: "Troll 2",
+  poster:
+    "https://ih1.redbubble.net/image.3162044071.7295/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+  director: "Claudio Fragasso",
+  year: 1990,
+};

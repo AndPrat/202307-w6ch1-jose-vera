@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import Film from "../types";
+import { Film } from "../types";
 
 const useFilmsApi = () => {
   const apiUrl = `${import.meta.env.VITE_FILMS_API_URL}films`;
@@ -15,7 +15,23 @@ const useFilmsApi = () => {
     }
   }, [apiUrl]);
 
-  return { getFilmsApi };
+  const addFilm = useCallback(
+    async (film: Partial<Film>) => {
+      const response = await fetch(apiUrl, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(film),
+      });
+      const newFilm = (await response.json()) as Film;
+
+      return newFilm;
+    },
+    [apiUrl],
+  );
+
+  return { getFilmsApi, addFilm };
 };
 
 export default useFilmsApi;

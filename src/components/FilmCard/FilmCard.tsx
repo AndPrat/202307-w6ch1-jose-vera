@@ -1,5 +1,5 @@
 import { X } from "react-feather";
-import Film from "../../types";
+import { Film } from "../../types";
 import Button from "../Button/Button";
 import "./FilmCard.css";
 
