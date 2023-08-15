@@ -33,11 +33,11 @@ const NewFilmForm = (): React.ReactElement => {
   return (
     <form className="form-film">
       <div className="form-control">
-        <label htmlFor="title">Título: </label>
+        <label htmlFor="title">Título:</label>
         <input type="text" id="title" value={title} onChange={changeNewFilm} />
       </div>
       <div className="form-control">
-        <label htmlFor="director">Dirección: </label>
+        <label htmlFor="director">Dirección:</label>
         <input
           type="text"
           id="director"
@@ -50,7 +50,7 @@ const NewFilmForm = (): React.ReactElement => {
         <input type="number" id="year" value={year} onChange={changeNewFilm} />
       </div>
       <div className="form-control">
-        <label htmlFor="poster">URL cartel: </label>
+        <label htmlFor="poster">URL cartel:</label>
         <input type="url" id="poster" value={poster} onChange={changeNewFilm} />
       </div>
       <div className="form-control">
