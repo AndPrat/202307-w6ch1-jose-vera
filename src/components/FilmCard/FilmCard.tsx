@@ -23,7 +23,7 @@ const FilmCard = ({ film }: FilmsCardProps): React.ReactElement => {
           <span aria-label={film.director}>Dirección: {film.director}</span>
         </li>
         <li>
-          <span aria-label={film.year.toString()}>Year: {film.year}</span>
+          <span aria-label={`${film.year}`}>Year: {film.year}</span>
         </li>
       </ul>
 
