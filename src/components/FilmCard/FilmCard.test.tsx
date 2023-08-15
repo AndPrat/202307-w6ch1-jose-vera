@@ -15,4 +15,36 @@ describe("Given a FilmCard component", () => {
       expect(filmTitle).toBeInTheDocument();
     });
   });
+
+  test("Then it should show a film poster of the film 'Viaje a Darjeeling'", () => {
+    const altText = "Viaje a Darjeeling";
+
+    render(<FilmCard film={mockFilms[0]} />);
+
+    const posterFilm = screen.getByAltText(altText);
+
+    expect(posterFilm).toBeInTheDocument();
+  });
+
+  describe("When it receives the 'Moonlight' film", () => {
+    test("Then it should show the film director's name text", () => {
+      const ariaLabelText = "Barry Jenkins";
+
+      render(<FilmCard film={mockFilms[1]} />);
+
+      const direction = screen.getByLabelText(ariaLabelText);
+
+      expect(direction).toBeInTheDocument();
+    });
+
+    test("Then it should show the film director's name text", () => {
+      const ariaLabelText = "2016";
+
+      render(<FilmCard film={mockFilms[1]} />);
+
+      const direction = screen.getByLabelText(ariaLabelText);
+
+      expect(direction).toBeInTheDocument();
+    });
+  });
 });
