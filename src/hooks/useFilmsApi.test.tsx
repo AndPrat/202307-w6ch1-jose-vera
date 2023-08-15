@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react";
-import { errorHandlers } from "../mocks/handlers";
-import { mockFilms } from "../mocks/mockFilms";
+import { errorHandlers, postHandlers } from "../mocks/handlers";
+import { mockFilms, newMockFilms } from "../mocks/mockFilms";
 import { server } from "../mocks/server";
 import useFilmsApi from "./useFilmsApi";
 
@@ -26,5 +26,15 @@ describe("Given a useFilmsApi custom hook", () => {
     const error = getFilmsApi();
 
     expect(error).rejects.toThrowError(expectedError);
+  });
+
+  test("Then it should show the new film created on films list", async () => {
+    server.resetHandlers(...postHandlers);
+
+    const { result } = renderHook(() => useFilmsApi());
+
+    const createFilm = await result.current.addFilm(newMockFilms);
+
+    expect(createFilm).toStrictEqual(newMockFilms);
   });
 });

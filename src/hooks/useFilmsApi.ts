@@ -16,7 +16,7 @@ const useFilmsApi = () => {
   }, [apiUrl]);
 
   const addFilm = useCallback(
-    async (film: Film) => {
+    async (film: Partial<Film>) => {
       const response = await fetch(apiUrl, {
         headers: {
           "Content-Type": "application/json",
