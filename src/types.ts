@@ -6,7 +6,7 @@ export interface Film {
   year: number;
 }
 
-export interface NewFilmForm {
+export interface NewFilm {
   title: string;
   poster: string;
   director: string;
