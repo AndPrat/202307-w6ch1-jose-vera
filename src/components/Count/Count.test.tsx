@@ -7,8 +7,8 @@ import FilmsContextProvider from "../../store/films/context/FilmsContextProvider
 describe("Given a FilmListPage component", () => {
   describe("When it receives a new loadFilms", () => {
     test("Then it should show 'Listando 2 películas'", async () => {
-      const loadFilms = mockFilms.length;
-      const labelText = `Listando ${loadFilms} películas`;
+      const expectTotalNumberFilms = mockFilms.length;
+      const labelText = `Listando ${expectTotalNumberFilms} películas`;
 
       render(
         <FilmsContextProvider>
