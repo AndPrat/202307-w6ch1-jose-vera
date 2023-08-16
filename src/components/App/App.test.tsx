@@ -6,7 +6,7 @@ import App from "./App";
 describe("Given an App component", () => {
   describe("When it's rendered", () => {
     test("Then it should show 'Películas' text inside a heading", () => {
-      const title = "Películas";
+      const expectedTitle = "Películas";
 
       render(
         <FilmsContextProvider>
@@ -16,7 +16,7 @@ describe("Given an App component", () => {
         </FilmsContextProvider>,
       );
 
-      const headerTitle = screen.getByRole("heading", { name: title });
+      const headerTitle = screen.getByRole("heading", { name: expectedTitle });
 
       expect(headerTitle).toBeInTheDocument();
     });
